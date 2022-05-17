@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=497954f72a0bb05fd8657fdb42abb1ef">
+
+	</script>
+	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=uf9y2qajej">
+
+	</script>
+	<script type="text/javascript" src="js/lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/lib/Leaflet-1.6.0/leaflet.js"></script>
+	<!--사용할 좌표값 -->
+	<script type="text/javascript" src="js/lib/proj4/proj4.js"></script>
+	<script type="text/javascript" src="js/lib/proj4/proj4leaflet.js"></script>
+	<!--커스터마이징 -->
+	<script type="text/javascript" src="js/lib/Leaflet-1.6.0/LeafletBaseMapNHNWebDynamicMap2.js"></script>
+	<script type="text/javascript" src="js/map.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="js/lib/Leaflet-1.6.0/leaflet.css">
+</head>
+
+<body>
+	<div id="map">
+		<div id="btn">
+			<button id="SHOW_WMS_UMD" type="button" onclick="GCRM.fn.getWms()">WMS UMD</button>
+			<button id="SHOW_WFS_STATION" type="button" onclick="GCRM.fn.getWfs()">WFS STATION</button>
+			<button id="SHOW_WFS_UMD_POLY" type="button" onclick="GCRM.fn.getWfsUMD()">WFS UMD</button>
+			<button onclick="location.href='chart'">CHART PAGE</button>
+		</div>
+	</div>
+	<div id="error"></div>
+</body>
+
+</html>
+<script type="text/javascript">
+	$(document).ready(function () {
+		GCRM.fn.init('kakao');
+	});
+</script>
